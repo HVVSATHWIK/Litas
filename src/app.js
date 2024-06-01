@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -6,9 +5,9 @@ const connectDB = require('./config/db');
 const swaggerDocs = require('./swagger');
 const authRoutes = require('./routes/auth');
 const postManagementRoutes = require('./routes/postManagement');
-const { authenticateUser } = require('./middleWare/authMiddleware');
-const errorHandler = require('./middleWare/errorhandler');
-const requestLogger = require('./middleWare/requestLogger');
+const { authenticateUser } = require('./middleware/authMiddleware');
+const errorHandler = require('./middleware/errorhandler');
+const requestLogger = require('./middleware/requestLogger');
 const config = require('./config/config');
 
 const app = express();
@@ -37,3 +36,4 @@ app.listen(config.serverPort, () => {
 });
 
 module.exports = app;
+  
